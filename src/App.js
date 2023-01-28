@@ -6,6 +6,7 @@ import LoginPage from './components/pages/LoginPage'
 import RegisterPage from './components/pages/RegisterPage'
 import ForgetPasswordPage from './components/pages/ForgetPasswordPage'
 import HomePage from './components/pages/HomePage'
+import AboutusPage from './components/pages/AboutusPage'
 
 import './App.css'
 
@@ -19,6 +20,7 @@ export default function App() {
                     <Route path="/register" component={ RegisterPage } />
                     <Route path="/forget-password" component={ ForgetPasswordPage } />
                     <Route path="/home" component={ HomePage } />
+                    <Route path="/aboutus" component={ AboutusPage } />
                 </Switch>
                 <Footer />
             </div>
@@ -28,8 +30,7 @@ export default function App() {
 
 const Footer = () => {
     return (
-        null
-        //<p className="text-center" style={ FooterStyle }>Designed & coded by <a href="https://izemspot.netlify.com" target="_blank" rel="noopener noreferrer">IZEMSPOT</a></p>
+        <p className="text-center" style={ FooterStyle }>Про нас <a href="https://satbayev.university" target="_blank" rel="noopener noreferrer">SATBAYEV UNIVERSITY</a></p>
     )
 }
 
