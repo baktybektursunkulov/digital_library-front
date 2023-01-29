@@ -13,6 +13,17 @@ body {
 .m-5-auto {
     margin: 5rem auto
 }
+.gdl-header__icon-link {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background: none;
+    border: none;
+    color: #596d79;
+    padding: 4px 6px;
+    margin: 2 4px;
+}
 
 .primary-button {
     margin-top: 5rem;
@@ -33,7 +44,30 @@ body {
 .main-para {
     color: whitesmoke
 }
+.gdl-header__usernav {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+} 
 
+.gdl-header {
+    height: 72px;
+    padding: 8px 16px;
+}
+.gdl-header {
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    color: #161e33;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 2px solid rgba(89,109,121,.2);
+    align-items: center;
+    box-sizing: border-box;
+    height: 88px;
+}
 .main-title {
     padding-top: 10rem;
     font-size: 5rem;
