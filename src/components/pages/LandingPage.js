@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 import '../../App.css'
 import BackgroundImage from '../../assets/images/t3.webp'
