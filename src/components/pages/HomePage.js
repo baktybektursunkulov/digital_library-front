@@ -7,9 +7,9 @@ export default function HomePage() {
         <header className="gdl-header">
         <div id="logo" onclick="slowScroll('#top')">
         <h1 class="gdl-header__logo">
-            {/* <Link to="/home"> */}
+            <Link to="/home">
                  <img src="https://digitallibrary.io/wp-content/themes/gdl-theme-twentytwentytwo/assets/logo-grey.svg" alt="Logotype for Global Digital Library" aria-hidden="true" width="217" height="62"/>
-                 {/* </Link> */}
+                 </Link>
             </h1>
          </div>
             
@@ -37,8 +37,8 @@ export default function HomePage() {
         </header>
 
  <div id="top">
-    <h1>Программирование</h1>
-    <h3>как способ жизни!</h3>
+    <h1>Книга – это мечта, которую вы держите в руках,</h1>
+    <h3>а цифровизация - это как способ жизни!</h3>
   </div>
 
   <div id="main">
@@ -47,7 +47,11 @@ export default function HomePage() {
       <span>Большой выбор всего, что может вам пригодиться</span>
     </div>
     <div class="text">
-      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos impedit, ut vero commodi voluptate? Ipsam reiciendis, necessitatibus incidunt ipsa quis sapiente excepturi, optio iusto voluptatibus dolorem officia quidem, numquam eaque minus, autem praesentium rem architecto dolores. Ipsa unde id velit optio magni enim! Illum obcaecati, dolorem distinctio nemo, ipsum iure.</span>
+      <span>Наша электронная библиотека может предоставить вам доступ к огромному количеству электронных книг на различные темы и на разных языках. Конкретный список книг, доступных в нашей библиотеке, может зависеть от поставщиков контента и подписки, которую вы выбираете.
+
+Мы можем предоставлять электронные книги в различных форматах, включая PDF, EPUB, MOBI, FB2 и др. Книги могут быть как бесплатными, так и платными, в зависимости от их авторства и издательства.
+
+Если вы ищете конкретную книгу, вы можете воспользоваться поиском в нашей библиотеке, чтобы найти нужный заголовок или автора. Мы также можем рекомендовать вам книги на основе ваших предпочтений чтения.</span>
     </div>
   </div>
 
@@ -56,12 +60,15 @@ export default function HomePage() {
     <h4>с нами все проще</h4>
 
     <div class="img">
-      <img src="https://itproger.com/img/courses/1532975967.jpg" alt=""/>
-      <span>Изучение языка Ruby для начинающих</span>
+      <a href="https://readrate.com/rus/books/1984"><img src="https://readrate.com/img/pictures/book/295/29554/29554/w240h400-d7dc49bc.jpg" alt=""/></a>
+      <span>1984</span><br/>
+      <span>Автор: Джордж Оруэлл</span><br/>
+      <span>Из серии: Джордж Оруэлл: все книги</span>
     </div>
     <div class="img">
-      <img src="https://itproger.com/img/courses/1530341233.jpg" alt=""/>
-      <span>Уроки PhotoShop для начинающих</span>
+    <a href="https://readrate.com/rus/books/451-po-farengeytu"><img src="https://readrate.com/img/pictures/book/292/29286/29286/w240h400-cc0528ab.jpg" alt=""/></a>
+      <span>451° по Фаренгейту</span><br/>
+       <span>Автор: Рэй Брэдбери</span>
     </div>
   </div>
 
@@ -78,49 +85,7 @@ export default function HomePage() {
       </form>
     </div>
 
-  <div id="faq">
-    <div>
-      <span class="title">Оплата</span><br/>
-      <span class="heading">Как будет проходит оплата?</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
-      <span class="heading">Как будет проходит оплата?</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
-      <span class="heading">Как будет проходит оплата?</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
-    </div>
-    <div>
-      <span class="title">Информация</span><br/>
-      <span class="heading">Что входит в услуги сервиса</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
-      <span class="heading">Что входит в услуги сервиса</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
-      <span class="heading">Что входит в услуги сервиса</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
-    </div>
-    <div>
-      <span class="title">Гарантии</span><br/>
-      <span class="heading">Какие гарантии есть</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
-      <span class="heading">Какие гарантии есть</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
-      <span class="heading">Какие гарантии есть</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
-    </div>
-  </div>
-   {/* // slowScroll("klk");     */}
         </>
     )
 }
 
-// export function slowScroll(id) {
-//     $('html, body').animate({
-//       scrollTop: $(id).offset().top
-//     }, 500);
-//   }
-
-//   $(document).on("scroll", function () {
-//     if($(window).scrollTop() === 0)
-//       $("header").removeClass("fixed");
-//     else
-//       $("header").attr("class", "fixed");
-//   });
