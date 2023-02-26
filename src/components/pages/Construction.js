@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import  myConst  from './HomePage';
 
- 
-console.log(myConst);
 export default function Genres() {
 
     const [data, setData] = useState([]);
@@ -18,6 +15,10 @@ export default function Genres() {
     
 
     return (
+        <>
+        <div>
+        <h1 align="center">Construction</h1>
+        </div>
         <div className="text-center">
 
             <div>
@@ -27,10 +28,10 @@ export default function Genres() {
                     </div>
                 ))}
             </div>
-            <h1 className="main-title home-page-title">Construction</h1>
-            <Link to="/">
-                <button className="primary-button">Log out</button>
+            <Link to="/home">
+                <button className="primary-button">Back to Home</button>
             </Link>
         </div>
+        </>
     )
 }
