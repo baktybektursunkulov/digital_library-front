@@ -6,7 +6,12 @@ import LoginPage from './components/pages/LoginPage'
 import RegisterPage from './components/pages/RegisterPage'
 import ForgetPasswordPage from './components/pages/ForgetPasswordPage'
 import HomePage from './components/pages/HomePage'
-import AboutusPage from './components/pages/AboutusPage'
+import Literature from './components/pages/Literature'
+import ComputerScience from './components/pages/ComputerScience'
+import Geology from './components/pages/Geology'
+import Chemistry from './components/pages/Chemistry'
+import Biology from './components/pages/Biology'
+import Construction from './components/pages/Construction'
 
 import './App.css'
 
@@ -20,7 +25,12 @@ export default function App() {
                     <Route path="/register" component={ RegisterPage } />
                     <Route path="/forget-password" component={ ForgetPasswordPage } />
                     <Route path="/home" component={ HomePage } />
-                    <Route path="/aboutus" component={ AboutusPage } />
+                    <Route path="/1" component={ Literature } />
+                    <Route path="/2" component={ ComputerScience } />
+                    <Route path="/3" component={ Geology } />
+                    <Route path="/4" component={ Chemistry } />
+                    <Route path="/5" component={ Biology } />
+                    <Route path="/6" component={ Construction } />
                 </Switch>
                 <Footer />
             </div>

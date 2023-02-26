@@ -1,13 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 
 import '../../App.css'
 import BackgroundImage from '../../assets/images/t3.webp'
 
 export default function LandingPage() {
     return (
-        <header style={ HeaderStyle }>
+        <header style={HeaderStyle}>
             <h1 className="main-title text-center">Digital Library</h1>
             <p className="main-para text-center">Присоединяйтесь к нам сейчас и не теряйте время</p>
             <div className="buttons text-center">
