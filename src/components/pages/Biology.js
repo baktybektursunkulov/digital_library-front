@@ -19,16 +19,20 @@ export default function Genres() {
         <div>
         <h1 align="center">Biology</h1>
         </div>
+        
         <div className="text-center">
-
-            <div>
-                {data.map(item => (
-                    <div key={item.id}>
-                        <h2>{item.name}</h2>
-                    </div>
-                ))}
+        <div class="product">
+                <div class="product-image">
+                    <img src="https://readrate.com/img/pictures/book/295/29554/29554/w240h400-d7dc49bc.jpg" alt="Product Image" />
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Product Name</h2>
+                    <p class="product-description">Product Description</p>
+                    <div class="product-price">Author</div>
+                    <div class="product-price">Year</div>
+                    <button class="product-button"> Скачать </button>
+                </div>
             </div>
-            
             <Link to="/home">
                 <button className="primary-button">Back to Home</button>
             </Link>
