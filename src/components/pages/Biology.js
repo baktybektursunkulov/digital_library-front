@@ -5,38 +5,43 @@ export default function Genres() {
 
     const [data, setData] = useState([]);
 
+
     useEffect(() => {
-        fetch('http://localhost:8075/direction')
+        fetch('http://localhost:8075/books/5')
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error(error));
     }, []);
-    //console.log(data);
-    
 
     return (
         <>
-        <div>
-        <h1 align="center">Biology</h1>
-        </div>
-        
-        <div className="text-center">
-        <div class="product">
-                <div class="product-image">
-                    <img src="https://readrate.com/img/pictures/book/295/29554/29554/w240h400-d7dc49bc.jpg" alt="Product Image" />
-                </div>
-                <div class="product-details">
-                    <h2 class="product-title">Product Name</h2>
-                    <p class="product-description">Product Description</p>
-                    <div class="product-price">Author</div>
-                    <div class="product-price">Year</div>
-                    <button class="product-button"> Скачать </button>
-                </div>
+            <div>
+                <h1 align="center">Biology</h1>
             </div>
-            <Link to="/home">
-                <button className="primary-button">Back to Home</button>
-            </Link>
-        </div>
+
+            <div className="text-center">
+                <div>
+                    {data.map(item => (
+                        <div key={item.id} >
+                            <div className="product">
+                                <div className="product-image">
+                                    <img src={item.url_picture} alt="Product Image" />
+                                </div>
+                                <div className="product-details">
+                                    <h2 className="product-title">{item.name}</h2>
+                                    <p className="product-description">{item.description}</p>
+                                    <div className="product-price">{item.author}</div>
+                                    <div className="product-price">{item.year}</div>
+                                    <button className="product-button" ><a href={item.url_minio}>Скачать</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <Link to="/home">
+                    <button className="primary-button">Back to Home</button>
+                </Link>
+            </div>
         </>
     )
 }

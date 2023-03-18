@@ -120,6 +120,4 @@ export default function HomePage() {
   )
 }
 
-export const d=myConst;
-console.log(d);
 
