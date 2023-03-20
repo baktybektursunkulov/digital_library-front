@@ -25,7 +25,8 @@ export default function SignInPage() {
         if (response.ok) {
             console.log("test")
           const data = await response.json();
-          history.push('/home');
+          if(username==='ADMIN') history.push('/admin');
+          else history.push('/home');
           // do something with the data
         } else {
           throw new Error('Invalid email or password');
