@@ -1,54 +1,74 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
-export default function Genres() {
+export default function AdminPage() {
 
 
     const [file, setFile] = useState(null);
     const [picture, setPicture] = useState(null);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [year, setYear] = useState();
+    const [errorMessage, setErrorMessage] = useState('');
+    const [year, setYear] = useState();
     const [author, setAuthor] = useState('');
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
+    const data = JSON.parse(localStorage.getItem('myData'));
+    console.log(data.token)
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+    const handleSubmit = async (event) => {
+        event.preventDefault();
 
-    if (!file) {
-      setErrorMessage('Please choose a file to upload.');
-      return;
-    }
-    if (!picture) {
-        setErrorMessage('Please choose a file to upload.');
-        return;
-      }
-    try {
-      const formData = new FormData();
-      formData.append('picture',picture)
-      formData.append('file', file);
-       formData.append('author',author);
-       formData.append('year',year);
-       formData.append('title',title)
-       formData.append('description',description)
+        if (!file) {
+            setErrorMessage('Please choose a file to upload.');
+            return;
+        }
+        if (!picture) {
+            setErrorMessage('Please choose a file to upload.');
+            return;
+        }
+        try {
+            const formData = new FormData();
+            formData.append('picture', picture)
+            formData.append('file', file);
+            formData.append('author', author);
+            formData.append('year', year);
+            formData.append('title', title)
+            formData.append('description', description)
 
-      const response = await fetch('http://localhost:8075/file/upload', {
-        method: 'POST',
-        body: formData
-      });
+            const response = await fetch('http://localhost:8075/file/upload', {
+                method: 'POST',
+                body: formData
+            });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        setErrorMessage(errorData.message);
-      } else {
-        // Handle successful file upload
-        console.log('File uploaded successfully.');
-      }
-    } catch (error) {
-      console.error(error);
-      setErrorMessage('An error occurred. Please try again later.');
-    }
-  };
+            if (!response.ok) {
+                const errorData = await response.json();
+                setErrorMessage(errorData.message);
+            } else {
+                // Handle successful file upload
+                console.log('File uploaded successfully.');
+            }
+        } catch (error) {
+            console.error(error);
+            setErrorMessage('An error occurred. Please try again later.');
+        }
+    };
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:8075/api/v1/admin/allUsers", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer_' + data.token // include your header here
+            }
+        })
+            .then(response => response.json())
+            .then(users => setUsers(users))
+            .catch(error => console.error(error));
+    }, []);
+
+
+    console.log(users)
 
     return (
         <>
@@ -86,29 +106,16 @@ export default function Genres() {
                             <input type="file" onChange={(event) => setPicture(event.target.files[0])} />
                         </p>
                         <p>
-                        <button type="submit">Upload</button>
+                            <button type="submit">Upload</button>
                         </p>
                     </form>
                 </div>
-
-                {/* <div>
-                    {data.map(item => (
-                        <div key={item.id} >
-                            <div className="product">
-                                <div className="product-image">
-                                    <img src={item.url_picture} alt="Product Image" />
-                                </div>
-                                <div className="product-details">
-                                    <h2 className="product-title">{item.name}</h2>
-                                    <p className="product-description">{item.description}</p>
-                                    <div className="product-price">{item.author}</div>
-                                    <div className="product-price">{item.year}</div>
-                                    <button className="product-button" ><a href={item.url_minio}>Скачать</a></button>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div> */}
+                <div>
+                </div>
+                <Link to="/users">
+                    <button className="primary-button">Go to Users Page</button>
+                </Link>
+                <br />
                 <Link to="/home">
                     <button className="primary-button">Back to Home</button>
                 </Link>
