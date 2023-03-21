@@ -73,7 +73,7 @@ export default function AdminPage() {
     return (
         <>
             <div>
-                <h1 align="center">Admin Page </h1>
+                <h1 align="center">Upload File</h1>
             </div>
 
             <div className="text-center">
@@ -113,7 +113,7 @@ export default function AdminPage() {
                 <div>
                 </div>
                 <Link to="/users">
-                    <button className="primary-button">Go to Users Page</button>
+                    <button className="primary-button">Users List</button>
                 </Link>
                 <br />
                 <Link to="/home">

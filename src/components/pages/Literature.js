@@ -4,9 +4,15 @@ import { Link } from 'react-router-dom'
 export default function Genres() {
 
     const [data, setData] = useState([]);
-
+    const jwt = JSON.parse(localStorage.getItem('myData'));
     useEffect(() => {
-        fetch('http://localhost:8075/books/1')
+        fetch('http://localhost:8075/books/1', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer_' + jwt.token // include your header here
+            }
+          })
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error(error));
@@ -31,7 +37,7 @@ export default function Genres() {
                                     <p className="product-description">{item.description}</p>
                                     <div className="product-price">{item.author}</div>
                                     <div className="product-price">{item.year}</div>
-                                    <button className="product-button" ><a href={item.url_minio}>Скачать</a></button>
+                                    <button className="product-button" ><a href={item.url_minio} target="_blank">Скачать</a></button>
                                 </div>
                             </div>
                         </div>
