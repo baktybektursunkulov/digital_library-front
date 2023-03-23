@@ -9,15 +9,15 @@ export default function Genres() {
         fetch('http://localhost:8075/books/3', {
             method: 'GET',
             headers: {
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer_' + jwt.token // include your header here
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer_' + jwt.token // include your header here
             }
-          })
+        })
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error(error));
     }, []);
-    
+
 
     return (
         <>

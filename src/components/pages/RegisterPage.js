@@ -14,12 +14,12 @@ export default function SignUpPage() {
     const [isValid, setIsValid] = useState(false);
 
     const handlePasswordChange = (e) => {
-      const value = e.target.value;
-      setPassword(value);
-      const isValidPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(
-        value
-      ); // Password must contain at least 8 characters, including at least one letter and one number.
-      setIsValid(isValidPassword);
+        const value = e.target.value;
+        setPassword(value);
+        const isValidPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(
+            value
+        ); // Password must contain at least 8 characters, including at least one letter and one number.
+        setIsValid(isValidPassword);
     };
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -30,7 +30,7 @@ export default function SignUpPage() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ username,firstName,lastName, email,password })
+                body: JSON.stringify({ username, firstName, lastName, email, password })
             });
 
             if (!response.ok) {
@@ -57,7 +57,7 @@ export default function SignUpPage() {
                     <input type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
                 </p>
                 <p>
-                    <label>Email address</label><br/>
+                    <label>Email address</label><br />
                     <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
                 </p>
                 <p>

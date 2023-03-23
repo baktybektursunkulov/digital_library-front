@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
-const myConst="89";
-console.log(myConst);
 
 export default function HomePage() {
 
@@ -27,10 +25,10 @@ export default function HomePage() {
     setSelectedOption(event.target.value);
   };
   console.log(selectedOption);
-  
+
 
   return (
-    
+
     <>
       <header className="gdl-header">
         <div id="logo" onclick="slowScroll('#top')">
@@ -64,7 +62,7 @@ export default function HomePage() {
               <path d="M8.5 8.28947C8.5 12.8597 12.3137 16.5789 17 16.5789C21.6863 16.5789 25.5 12.8597 25.5 8.28947C25.5 3.71921 21.6863 0 17 0C12.3137 0 8.5 3.71921 8.5 8.28947ZM32.1111 35H34V33.1579C34 26.0492 28.067 20.2632 20.7778 20.2632H13.2222C5.93111 20.2632 0 26.0492 0 33.1579V35H32.1111Z" fill="#596D79"></path>
             </svg>
           </a>
-          
+
         </div>
       </header>
 

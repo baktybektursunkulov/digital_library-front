@@ -621,10 +621,10 @@ form span {
   background-color: #343a40;
 }
 
-.invalidPassword{
-   color: red;
+.invalidPassword {
+  color: red;
 }
 
-.validPassword{
+.validPassword {
   color: green;
 }
