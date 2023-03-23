@@ -11,7 +11,16 @@ export default function SignUpPage() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [isValid, setIsValid] = useState(false);
 
+    const handlePasswordChange = (e) => {
+      const value = e.target.value;
+      setPassword(value);
+      const isValidPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(
+        value
+      ); // Password must contain at least 8 characters, including at least one letter and one number.
+      setIsValid(isValidPassword);
+    };
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -26,7 +35,7 @@ export default function SignUpPage() {
 
             if (!response.ok) {
                 const errorData = await response.json();
-                setErrorMessage(errorData.message);
+                setErrorMessage("An error occurred. Username or email excited.");
             } else {
                 // Redirect the user to the login page upon successful signup
                 window.location.href = '/login';
@@ -61,7 +70,12 @@ export default function SignUpPage() {
                 </p>
                 <p>
                     <label>Password</label><br />
-                    <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+                    <input type="password" id="password" value={password} onChange={handlePasswordChange} />
+                    {isValid ? (
+                        <p className="validPassword">Password is valid.</p>
+                    ) : (
+                        <p className="invalidPassword">Password must contain at least 8 characters, including at least one letter and one number.</p>
+                    )}
                 </p>
                 <p>
                     <input type="checkbox" name="checkbox" id="checkbox" required /> <span>I agree all statements in <a href="https://google.com" target="_blank" rel="noopener noreferrer">terms of service</a></span>.

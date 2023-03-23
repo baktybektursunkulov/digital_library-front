@@ -620,3 +620,11 @@ form span {
 .product-button:hover {
   background-color: #343a40;
 }
+
+.invalidPassword{
+   color: red;
+}
+
+.validPassword{
+  color: green;
+}

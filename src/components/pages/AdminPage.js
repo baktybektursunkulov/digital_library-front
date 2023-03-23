@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'
 
 export default function AdminPage() {
 
-
+    const formRef = useRef(null);
     const [file, setFile] = useState(null);
     const [picture, setPicture] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
@@ -12,10 +12,9 @@ export default function AdminPage() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const data = JSON.parse(localStorage.getItem('myData'));
-    console.log(data.token)
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
         if (!file) {
             setErrorMessage('Please choose a file to upload.');
@@ -45,30 +44,18 @@ export default function AdminPage() {
             } else {
                 // Handle successful file upload
                 console.log('File uploaded successfully.');
+                formRef.current.reset();
+                setYear();
+                setAuthor('');
+                setTitle('');
+                setDescription('');
             }
         } catch (error) {
             console.error(error);
             setErrorMessage('An error occurred. Please try again later.');
         }
+
     };
-
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:8075/api/v1/admin/allUsers", {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer_' + data.token // include your header here
-            }
-        })
-            .then(response => response.json())
-            .then(users => setUsers(users))
-            .catch(error => console.error(error));
-    }, []);
-
-
-    console.log(users)
 
     return (
         <>
@@ -79,7 +66,7 @@ export default function AdminPage() {
             <div className="text-center">
 
                 <div>
-                    <form onSubmit={handleSubmit}>
+                    <form ref={formRef} onSubmit={handleSubmit}>
                         {errorMessage && <div>{errorMessage}</div>}
                         <p>
                             <label>Title</label><br />
