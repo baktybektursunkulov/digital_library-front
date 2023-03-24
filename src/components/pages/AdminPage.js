@@ -85,11 +85,11 @@ export default function AdminPage() {
                             <input type="text" value={description} onChange={(event) => setDescription(event.target.value)} />
                         </p>
                         <p>
-                            Choose a pdf file:
+                            Choose a file:
                             <input type="file" accept=".pdf" onChange={(event) => setFile(event.target.files[0])} />
                         </p>
                         <p>
-                            Choose a jpg picture:
+                            Choose a picture:
                             <input type="file" accept=".jpg" onChange={(event) => setPicture(event.target.files[0])} />
                         </p>
                         <p>

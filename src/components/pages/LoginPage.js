@@ -51,7 +51,6 @@ export default function SignInPage() {
         </p>
         <p>
           <label>Password</label>
-          <Link to="/forget-password"><label className="right-label">Forget password?</label></Link>
           <br />
           <input type="password" id="password" value={password} onChange={(event) => setPassword(event.target.value)} />
         </p>
