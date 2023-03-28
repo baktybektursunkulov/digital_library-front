@@ -14,6 +14,7 @@ import Biology from './components/pages/Biology'
 import Construction from './components/pages/Construction'
 import AdminPage from './components/pages/AdminPage'
 import UsersPage from './components/pages/UsersPage'
+import ResetPasswordPage from './components/pages/ResetPasswordPage'
 
 import './App.css'
 
@@ -29,6 +30,7 @@ export default function App() {
                     <Route path="/home" component={ HomePage } />
                     <Route path="/admin" component={ AdminPage } />
                     <Route path="/users" component={ UsersPage } />
+                    <Route path="/reset-password" component={ ResetPasswordPage } />
                     <Route path="/1" component={ Literature } />
                     <Route path="/2" component={ ComputerScience } />
                     <Route path="/3" component={ Geology } />

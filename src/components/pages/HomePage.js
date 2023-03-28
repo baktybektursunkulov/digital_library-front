@@ -31,8 +31,8 @@ export default function HomePage() {
 
     <>
       <header className="gdl-header">
-        <div id="logo" onclick="slowScroll('#top')">
-          <h1 class="gdl-header__logo">
+        <div id="logo" onClick="slowScroll('#top')">
+          <h1 className="gdl-header__logo">
             <Link to="/home">
               <img src="https://digitallibrary.io/wp-content/themes/gdl-theme-twentytwentytwo/assets/logo-grey.svg" alt="Logotype for Global Digital Library" aria-hidden="true" width="217" height="62" />
             </Link>
