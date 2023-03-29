@@ -26,6 +26,12 @@ export default function SignInPage() {
       console.log(response)
       if (response.ok) {
         const data = await response.json();
+        const sessionData = { isLoggedIn: true };
+          const expirationTime = new Date().getTime() + 3600000; // Время жизни 1 час
+          localStorage.setItem('sessionData', JSON.stringify({
+            data: sessionData,
+            expiration: expirationTime
+          }));
         if (username === 'ADMIN') {
           localStorage.setItem('myData', JSON.stringify(data));
           history.push('/admin');

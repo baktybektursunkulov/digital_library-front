@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 import '../../UserList.css'
 
 export default function AdminPage() {
@@ -13,7 +14,20 @@ export default function AdminPage() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const data = JSON.parse(localStorage.getItem('myData'));
+  const history = useHistory();
 
+  useEffect(() => {
+    const sessionData = localStorage.getItem('sessionData');
+    if (sessionData) {
+      const parsedSessionData = JSON.parse(sessionData);
+      if (parsedSessionData.expiration < new Date().getTime()) {
+        localStorage.removeItem('sessionData');
+        history.push('/');
+      }
+    }
+  }, [history]);
+
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
 

@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 
 export default function Genres() {
 
     const [data, setData] = useState([]);
     const jwt = JSON.parse(localStorage.getItem('myData'));
+    const history = useHistory();
+
+    useEffect(() => {
+        const sessionData = localStorage.getItem('sessionData');
+        if (sessionData) {
+          const parsedSessionData = JSON.parse(sessionData);
+          if (parsedSessionData.expiration < new Date().getTime()) {
+            localStorage.removeItem('sessionData');
+            history.push('/');
+          }
+        }
+      }, [history]);
+
     useEffect(() => {
         fetch('http://localhost:8075/books/1', {
             method: 'GET',
