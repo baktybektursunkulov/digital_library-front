@@ -19,10 +19,8 @@ export default function ForgetPasswordPage() {
         },
         body: JSON.stringify({ email }),
       });
-      console.log(response)
+      console.log(response.ok)
       if (response.ok) {
-        const data = await response.json();
-          localStorage.setItem('myData', JSON.stringify(data));
           history.push('/login');
         // do something with the data
       } else {
