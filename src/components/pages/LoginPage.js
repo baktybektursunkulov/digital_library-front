@@ -32,8 +32,8 @@ export default function SignInPage() {
             data: sessionData,
             expiration: expirationTime
           }));
-        if (username === 'ADMIN') {
           localStorage.setItem('myData', JSON.stringify(data));
+        if (username === 'ADMIN') {
           history.push('/admin');
         }
         else history.push('/home');
